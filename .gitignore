@@ -1,0 +1,17 @@
+# Ignore CLion and CMake-specific files
+.idea/
+cmake-build-debug/
+cmake-build-release/
+cmake-build-*/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore compiled binaries
+*.o
+*.a
+*.so
+*.exe
+*.dll
+*.dylib
