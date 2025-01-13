@@ -5,14 +5,18 @@ const char* base_directory;
 
 // Takes in the base directory path to server files from
 int main(int argc, char* argv[]){
-    if (argc != 2){
-        printf("This program requires a home directory which files will be served from!\n");
+    if (argc > 2){
+        printf("This program requires a home directory which files will be served from or no directory\n");
         return 1;
     }
     int clientfd; // clients fd, new_fd is used to pass in the clientfd to a thread
     struct sockaddr_storage client_address; // Address of client
     socklen_t client_length = sizeof(client_address);
-    base_directory = argv[1];
+    if (argc == 2) {
+        base_directory = argv[1];
+    } else {
+        base_directory = "files";
+    }
     wordCount = initialization();
     const int socketfd = server_setup(); // Get the socket created in the network
     while(1) {

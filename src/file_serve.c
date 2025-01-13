@@ -4,7 +4,7 @@ extern const char* base_directory;
 
 void serve_file(const char* path, const int clientfd) {
     char filepath[512] = {0};
-    strcpy(filepath, base_directory); // Copy the base directory to the filepath
+    strcpy(filepath, base_directory); // Copy the base directory (files or specified) to the filepath
     strcat(filepath, path); // Concatanate the requested file to the filepath
     const int file = open(filepath, O_RDONLY);
     // Send HTTP 404 header as the requested file was not found
