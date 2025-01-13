@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.22.1)
-project(Webserver C)
+project(server C)
 
 set(CMAKE_C_STANDARD 23)
 
 include_directories(include)
+# Copy resources directory to the build folder
+file(COPY ${CMAKE_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR})
 
-add_executable(Webserver
+
+add_executable(server
         src/server.c
         src/request_handler.c
         src/file_serve.c

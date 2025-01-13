@@ -12,7 +12,7 @@ int initialization() {
     int wordCount = 0;
     wordListNode* wordListEnd = wordList;
 
-    FILE *fp = fopen("./resources/dictionary.txt", "r");
+    FILE *fp = fopen("resources/dictionary.txt", "r");
     if (fp != NULL){
         char lineBuffer[30];
         while(fgets(lineBuffer, sizeof(lineBuffer), fp)){
