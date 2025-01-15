@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 project(server C)
 
-set(CMAKE_C_STANDARD 23)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories(include)
 # Copy resources directory to the build folder

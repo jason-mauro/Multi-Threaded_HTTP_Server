@@ -57,6 +57,7 @@ void* handle_connection(void* socketfd){
                 }
                 }
             } else {
+                printf("%s\n", tokenize);
                 serve_file(tokenize, clientfd);
             }
         }
